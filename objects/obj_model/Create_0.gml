@@ -1,5 +1,5 @@
-    var t_start=get_timer();
-global.cubemodel = scr_create_obj_mtl("./fish_h_monsoon_skel.obj","./fish_h_monsoon_skel.mtl",512,"Fish_Tex");
+var t_start=get_timer();
+global.cubemodel = scr_create_obj_mtl("models/maps/riverbank2_1.obj","models/maps/riverbank2_1.mtl",8182,"models/maps/textures");
  var t_end=get_timer();
 
 //TIMER END

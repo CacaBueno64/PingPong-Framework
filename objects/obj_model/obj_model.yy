@@ -9,8 +9,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Global objects",
+    "path": "folders/Global objects.yy",
   },
   "parentObjectId": null,
   "persistent": false,

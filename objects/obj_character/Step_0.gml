@@ -5,4 +5,4 @@ if keyboard_check(ord("A"))
 	x = 0
 	y = 0
 }
-depth = 1
+depth = 2
