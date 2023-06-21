@@ -1,4 +1,4 @@
-# Ping Pong Framework
+# The Ping Pong Framework
 
 Here's a ***WIP*** recreation of nds/3ds inazuma eleven engine written in GML (gamemaker language)
 
