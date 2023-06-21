@@ -15,7 +15,7 @@ the model **must be** an .obj (triangulated, no squares!!), with a .mtl file and
 the texture (.png) need to be placed in a subfolder 
 
 to load a model, you need to type in a create event :
-``variable = scr_create_obj_mtl(".obj file directory",".mtl file directory",texture_resolution,"the texture subfolder directory")``
+```variable = scr_create_obj_mtl(".obj file directory",".mtl file directory",texture_resolution,"the texture subfolder directory")```
 example :
 ``model = scr_create_obj_mtl("models/maps/riverbank2_1.obj","models/maps/riverbank2_1.mtl",8182,"models/maps/textures")``
 
