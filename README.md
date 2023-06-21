@@ -29,3 +29,5 @@ example :
 example :
 
 ``scr_draw_obj_mtl(test_model, 20, 20, 20, -90, 0, 0, 0, 0, 0)``
+
+obj mtl loader source : https://forum.gamemaker.io/index.php?threads/free-3d-obj-mtl-multi-texture-importer.47145/
