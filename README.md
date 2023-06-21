@@ -24,7 +24,7 @@ example :
 
 - to draw a model, type a draw event :
 
-``scr_draw_obj_mtl(variable, scale_x, scale_y, scale_z, rotatex, rotatey, rotatez, xpos, ypos, zpos)``
+``scr_draw_obj_mtl(variable, scale_x, scale_y, scale_z, rotate_x, rotate_y, rotate_z, xpos, ypos, zpos)``
 
 example :
 
