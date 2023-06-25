@@ -7,3 +7,5 @@ zgravity = 0.1
 bouncedecay = 0.7
 if z = 0 { friction = 0.015 } else { friction = 0.05 }
 zspeed = zgravity
+bounce = false
+
