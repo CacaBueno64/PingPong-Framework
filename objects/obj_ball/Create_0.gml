@@ -1,11 +1,9 @@
 z = 0
-zheight = 0
 zspeed = 0
-zjumpspeed = -3
-zfloor = 1
+zjumpspeed = 3
 zgravity = 0.1
 bouncedecay = 0.7
-if z = 0 { friction = 0.015 } else { friction = 0.05 }
-zspeed = zgravity
+friction = 0.008
 bounce = false
+bounce_count = 0
 

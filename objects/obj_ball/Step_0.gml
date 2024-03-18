@@ -1,40 +1,50 @@
-if mouse_check_button_pressed(mb_left)
+if /*obj_player.hasball = true &&*/ bounce = false
 {
-	bounce = true
-	move_towards_point(mouse_x, mouse_y, clamp((point_distance(x, y, mouse_x, mouse_y)/14), 0, 3.5))
-	zspeed = zjumpspeed 
-}
-
-if bounce = true
-{
-	if keyboard_check_pressed(ord("Z"))
+	//shoot
+	if mouse_check_button_pressed(mb_left)
 	{
-		z = 0
+		bounce = true
+		zspeed = zjumpspeed
+		if instance_exists(obj_balltarget)
+		{
+			instance_destroy(obj_balltarget)
+		}
+		instance_create_layer(mouse_x, mouse_y, "Instances", obj_balltarget)
+		
+		move_towards_point(obj_balltarget.x, obj_balltarget.y, 2)
+		
 	}
+	
+	//ball will follow the player
+	//x = obj_player.x
+	//y = obj_player.y
+}
+if (bounce_count == 1) instance_destroy(obj_balltarget)
 
-	//x += hspeed
-	//y += vspeed
+if bounce = true //ball physics
+{
+	move_bounce_solid(0) //wall bounce (x,y)
+
+	if (z > 0) zspeed -= zgravity //apply gravity if the ball is in the air
+
 	z += zspeed
-	move_bounce_solid(0)
-	//zjumpspeed = clamp(zjumpspeed, -4, 0)
 
-	//check if the ball hits the floor
-	if z > 0
+	if z < 0
 	{
-		zfloor = 0
-	} else {
-		zfloor = 1
-	}
-
-	//bounce the ball
-	if zfloor != 1 
-	{
-	zspeed = -zspeed * bouncedecay
-	}
-
-	//apply gravity only if the ball isn't on the ground
-	if zfloor = 1
-	{	
-		zspeed += zgravity
+		z = -z //bounce
+		bounce_count += 1 //counting bounces
+	
+		if (zspeed < 0) zspeed = -zspeed * bouncedecay
+	
+		if zspeed < 0.7 //stop bouncing
+		{
+			z = 0
+			zspeed = 0
+			bounce = false
+			bounce_count = 0 //stop counting
+		}
 	}
 }
+
+
+

@@ -1,1 +1,0 @@
-draw_text(x, y, "direction : " + string(player_direction))
