@@ -1,10 +1,10 @@
 //check if the player possesses the ball
-if place_meeting(x, y, obj_ball) && obj_ball.z < 30
+/*if place_meeting(x, y, obj_ball) && obj_ball.z < 30
 {
 	hasball = true
 } else {
 	hasball = false
-}
+}*/
 
 ////player movements
 
