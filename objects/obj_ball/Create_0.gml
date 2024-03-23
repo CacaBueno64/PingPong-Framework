@@ -1,9 +1,24 @@
-z = 0
-zspeed = 0
-zjumpspeed = 3
-zgravity = 0.1
-bouncedecay = 0.7
-friction = 0.008
-bounce = false
-bounce_count = 0
+
+height = 0
+shootdistance = 0
+linedistancex = 0
+linedistancey = 0
+z1 = 0
+z2 = 0
+z3 = 0
+z4 = 0
+z5 = 0
+z6 = 0
+zh1 = 0
+zh2 = 0
+zh3 = 0
+zh4 = 0
+zh5 = 0
+zh6 = 0
+angle = 0
+
+
+
+
+
 

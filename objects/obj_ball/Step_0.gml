@@ -1,57 +1,48 @@
-//values, fresh from my ass
-var shoot_force = point_distance(x, y, mouse_x, mouse_y) * 0.02 
-var limit = 4
 
-if /*obj_player.hasball = true &&*/ bounce = false
-{
-	//shoot
-	if mouse_check_button_pressed(mb_left)
-	{
-		bounce = true
-		
-		if instance_exists(obj_balltarget)
-		{
-			instance_destroy(obj_balltarget)
-		}
-		instance_create_layer(mouse_x, mouse_y, "Instances", obj_balltarget)
-		
-		move_towards_point(obj_balltarget.x, obj_balltarget.y, clamp(shoot_force, 0, limit))
-		
-		zspeed = clamp(shoot_force, 0, limit)
-		
+if mouse_check_button_pressed(mb_left) {
+	
+	if instance_exists(obj_linetargetend) {
+		instance_destroy(obj_linetargetend)
+		instance_destroy(obj_linetarget)
+		instance_destroy(obj_linetarget1)
+		instance_destroy(obj_linetarget2)
+		instance_destroy(obj_linetarget3)
+		instance_destroy(obj_linetarget4)
+		instance_destroy(obj_linetarget5)
+		instance_destroy(obj_linetarget6)
 	}
 	
-	//ball will follow the player
-	//x = obj_player.x
-	//y = obj_player.y
-}
-if (bounce_count == 1) instance_destroy(obj_balltarget)
-
-
-if bounce = true //ball physics
-{
-	move_bounce_solid(0) //wall bounce (x,y)
-
-	if (z > 0) zspeed -= zgravity //apply gravity if the ball is in the air
-
-	z += zspeed
-
-	if z < 0
-	{
-		z = -z //bounce
-		bounce_count += 1 //counting bounces
+	instance_create_layer(mouse_x, mouse_y, "Instances", obj_linetargetend)
+	//instance_create_layer(x, y, "Instances", obj_obstaclecheck)
+	instance_create_layer(x, y, "Instances", obj_linetarget)
 	
-		if (zspeed < 0) zspeed = -zspeed * bouncedecay
+	//obj_obstaclecheck.direction = point_direction(x, y, obj_linetargetend.x, obj_linetargetend.y)
 	
-		if zspeed < 0.7 //stop bouncing
-		{
-			z = 0
-			zspeed = 0
-			bounce = false
-			bounce_count = 0 //stop counting
-		}
-	}
+	direction = point_direction(x, y, mouse_x, mouse_y)
+	shootdistance = point_distance(x, y, mouse_x, mouse_y)
+	shootdistance = clamp(shootdistance, 0, 256)
+	linedistancex = (lengthdir_x(shootdistance, direction)) / 6
+	linedistancey = (lengthdir_y(shootdistance, direction)) / 6
+	
+	height = point_distance(x, y, mouse_x, mouse_y) / 6
+	height = clamp(height, 0, 48)
+	
+	//values, fresh from my ass
+	zh1 = height * 0.5
+	zh2 = height * 0.87
+	zh3 = height
+	zh4 = height * 0.87
+	zh5 = height * 0.5
+	zh6 = 0
+	
+	instance_create_layer(x + (linedistancex),		y + (linedistancey	   - zh1),	"Instances", obj_linetarget1)
+	instance_create_layer(x + (linedistancex * 2),	y + (linedistancey * 2 - zh2),	"Instances", obj_linetarget2)
+	instance_create_layer(x + (linedistancex * 3),	y + (linedistancey * 3 - zh3),	"Instances", obj_linetarget3)
+	instance_create_layer(x + (linedistancex * 4),	y + (linedistancey * 4 - zh4),	"Instances", obj_linetarget4)
+	instance_create_layer(x + (linedistancex * 5),	y + (linedistancey * 5 - zh5),	"Instances", obj_linetarget5)
+	instance_create_layer(x + (linedistancex * 6),	y + (linedistancey * 6 - zh6),	"Instances", obj_linetarget6)
+	
+	//move the ball
+	
+	
 }
-
-
-

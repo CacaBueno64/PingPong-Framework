@@ -1,0 +1,1 @@
+draw_line_width_color(x, y, obj_linetarget6.x, obj_linetarget6.y, 3, $FFFF00, $FFFF00)

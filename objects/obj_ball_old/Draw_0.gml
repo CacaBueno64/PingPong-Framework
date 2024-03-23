@@ -5,9 +5,5 @@ depth = -bbox_bottom + z * 2
 draw_sprite(spr_shball, 0, x, y)
 
 //the ball with z axis
-draw_sprite(spr_ball, 0, x, (y - z) - 3)*/
-
-draw_self()
-
-
+draw_sprite(spr_ball, 0, x, (y - z) - 3)
 

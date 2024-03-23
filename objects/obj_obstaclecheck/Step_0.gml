@@ -1,0 +1,1 @@
+direction = point_direction(x, y, obj_linetargetend.x, obj_linetargetend.y)
